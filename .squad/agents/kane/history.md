@@ -14,3 +14,10 @@
 - Used gray-matter for markdown frontmatter parsing, js-yaml for YAML, marked for HTML rendering
 - Set up chokidar file-watching so API reflects data file edits without server restart
 - Added shared TypeScript types consumed by both server and frontend
+
+### 2026-03-29 — Write API Endpoints
+- Added write endpoints (PUT, POST, DELETE) to all 5 route files for full CRUD support
+- Implemented input validation on all write endpoints to reject malformed payloads
+- Added path-traversal protection on slug/id-based routes to prevent directory escape attacks
+- Research write endpoints generate markdown files with YAML frontmatter from structured input
+- Shopping routes support both item-level CRUD and budget-level updates as separate endpoints

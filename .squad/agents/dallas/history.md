@@ -14,3 +14,10 @@
 - Implemented data-fetching hooks via TanStack Query for auto-refresh from Express API
 - Production build passes cleanly with no TypeScript or build errors
 - React Router handles client-side navigation between Dashboard, Research, Timeline, Tasks, Shopping
+
+### 2026-03-29 — Edit UI Support
+- Created 6 dialog components (ConfigDialog, MilestoneDialog, TaskDialog, ShoppingItemDialog, BudgetDialog, ResearchDialog) using shadcn dialog pattern
+- Added 12 mutation hooks to useApi.ts using TanStack Query's useMutation with automatic query invalidation on success
+- Installed 5 new shadcn components: dialog, input, label, select, textarea
+- ResearchDialog supports raw markdown editing for full-content topic updates
+- All pages updated with contextual edit buttons/controls — pattern is trigger button → dialog → mutation → auto-refresh
