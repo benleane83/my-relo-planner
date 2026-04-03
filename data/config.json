@@ -1,0 +1,24 @@
+{
+  "origin": {
+    "city": "Dubai",
+    "country": "UAE"
+  },
+  "destination": {
+    "city": "Perth",
+    "country": "Australia"
+  },
+  "moveDate": "2026-11-01",
+  "familyMembers": [
+    {
+      "name": "Ben",
+      "notes": ""
+    },
+    {
+      "name": "Shabnam",
+      "notes": ""
+    }
+  ],
+  "originCurrency": "AED",
+  "destinationCurrency": "AUD",
+  "conversionRate": 0.4
+}

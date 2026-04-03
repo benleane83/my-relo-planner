@@ -1,0 +1,97 @@
+budget:
+  total: 15000
+  categories:
+    furniture: 5000
+    electronics: 3000
+    household: 2500
+    clothing: 1500
+    other: 3000
+
+items:
+  - id: shop-001
+    item: Sofa (3-seater)
+    category: furniture
+    quantity: 1
+    estimatedCost: 1200
+    actualCost: 0
+    currency: GBP
+    status: researching
+    store: IKEA / Made.com
+    notes: Need to check dimensions for London flat. Prefer something deliverable within 2 weeks of arrival.
+
+  - id: shop-002
+    item: UK Power Adapters (multi-pack)
+    category: electronics
+    quantity: 10
+    estimatedCost: 30
+    actualCost: 25
+    currency: USD
+    status: purchased
+    store: Amazon US
+    notes: Bought 10-pack of US-to-UK adapters. Will also need a few UK extension leads on arrival.
+
+  - id: shop-003
+    item: Mattress (King)
+    category: furniture
+    quantity: 1
+    estimatedCost: 800
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ""
+    notes: UK king is different size than US king. Research UK mattress brands.
+
+  - id: shop-004
+    item: Winter Coats
+    category: clothing
+    quantity: 2
+    estimatedCost: 400
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ""
+    notes: London winters are wet and cold. Need proper waterproof coats.
+
+  - id: shop-005
+    item: Voltage Converter (heavy duty)
+    category: electronics
+    quantity: 1
+    estimatedCost: 80
+    actualCost: 0
+    currency: USD
+    status: researching
+    store: Amazon US
+    notes: For kitchen appliances that can't handle 220V. Check if KitchenAid mixer is dual voltage.
+
+  - id: shop-006
+    item: Bedding Set (UK King)
+    category: household
+    quantity: 2
+    estimatedCost: 150
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: John Lewis
+    notes: UK king bedding won't fit US king mattress and vice versa. Buy after mattress decision.
+
+  - id: shop-007
+    item: Kitchen Essentials Starter Kit
+    category: household
+    quantity: 1
+    estimatedCost: 200
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ""
+    notes: Pots, pans, utensils, plates for first week. Ship rest or buy once settled.
+
+  - id: shop-008
+    item: Standing Desk
+    category: furniture
+    quantity: 1
+    estimatedCost: 500
+    actualCost: 0
+    currency: GBP
+    status: researching
+    store: Fully / IKEA
+    notes: Need a good WFH setup immediately. Check if current desk is worth shipping.

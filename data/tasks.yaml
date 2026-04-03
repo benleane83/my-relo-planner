@@ -1,0 +1,25 @@
+tasks:
+  - id: task-002
+    title: Get international shipping quotes
+    category: shipping-and-freight
+    milestone: shipping-quotes
+    status: todo
+    priority: medium
+    dueDate: '2026-06-01'
+    notes: Contact Allied, Santa Fe and Seven Seas. Compare FCL vs LCL options.
+  - id: task-003
+    title: Misha's RNATT test
+    category: pet
+    milestone: pet-preparation
+    status: done
+    priority: high
+    dueDate: '2026-03-11'
+    notes: Test result dated 11th March, so 180-day period will start and finish early Sept.
+  - id: task-009
+    title: Book temporary accommodation for first month
+    category: accommodation-and-housing
+    milestone: accommodation-secured
+    status: todo
+    priority: medium
+    dueDate: '2026-10-01'
+    notes: Need Shabnam's accommodation for while renovation is happening.
