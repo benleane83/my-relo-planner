@@ -18,13 +18,19 @@ export interface Config {
   conversionRate: number;
 }
 
-export interface ResearchTopic {
+export type ResearchTopicStatus = 'not-started' | 'in-progress' | 'done';
+
+export interface ResearchTopicSummary {
   slug: string;
   title: string;
-  status: 'not-started' | 'in-progress' | 'done';
+  status: ResearchTopicStatus;
   lastUpdated: string;
   tags: string[];
-  content?: string;
+}
+
+export interface ResearchTopicDetail extends ResearchTopicSummary {
+  bodyMarkdown: string;
+  contentHtml: string;
 }
 
 export interface Milestone {

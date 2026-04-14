@@ -1,5 +1,14 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import type { Config, ResearchTopic, Milestone, Task, ShoppingItem, ShoppingData } from '../types';
+import type {
+  Config,
+  ResearchTopicDetail,
+  ResearchTopicStatus,
+  ResearchTopicSummary,
+  Milestone,
+  Task,
+  ShoppingItem,
+  ShoppingData,
+} from '../types';
 
 const fetchJson = async <T>(url: string): Promise<T> => {
   const res = await fetch(url);
@@ -28,7 +37,7 @@ export function useConfig() {
 }
 
 export function useResearchTopics() {
-  return useQuery<ResearchTopic[]>({
+  return useQuery<ResearchTopicSummary[]>({
     queryKey: ['research'],
     queryFn: () => fetchJson('/api/research'),
     refetchInterval: 5000,
@@ -36,7 +45,7 @@ export function useResearchTopics() {
 }
 
 export function useResearchTopic(slug: string | null) {
-  return useQuery<ResearchTopic>({
+  return useQuery<ResearchTopicDetail>({
     queryKey: ['research', slug],
     queryFn: () => fetchJson(`/api/research/${slug}`),
     enabled: !!slug,
@@ -150,7 +159,7 @@ export function useCreateResearchTopic() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (data: { slug: string; title: string; tags: string[] }) =>
-      mutateJson<ResearchTopic>('/api/research', 'POST', data),
+      mutateJson<ResearchTopicDetail>('/api/research', 'POST', data),
     onSuccess: () => { qc.invalidateQueries({ queryKey: ['research'] }); },
   });
 }
@@ -158,8 +167,13 @@ export function useCreateResearchTopic() {
 export function useUpdateResearchTopic() {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: ({ slug, ...data }: { slug: string; title: string; status: string; tags: string[]; content: string }) =>
-      mutateJson<ResearchTopic>(`/api/research/${slug}`, 'PUT', data),
+    mutationFn: ({ slug, ...data }: {
+      slug: string;
+      title?: string;
+      status?: ResearchTopicStatus;
+      tags?: string[];
+      bodyMarkdown?: string;
+    }) => mutateJson<ResearchTopicDetail>(`/api/research/${slug}`, 'PUT', data),
     onSuccess: (_, vars) => {
       qc.invalidateQueries({ queryKey: ['research'] });
       qc.invalidateQueries({ queryKey: ['research', vars.slug] });

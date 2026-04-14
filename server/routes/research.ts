@@ -7,6 +7,16 @@ import MarkdownIt from 'markdown-it';
 export const researchRouter = Router();
 const md = new MarkdownIt();
 
+const toTopicResponse = (slug: string, data: Record<string, any>, bodyMarkdown: string) => ({
+  slug,
+  title: data.title || slug.replace(/-/g, ' '),
+  status: data.status || 'not-started',
+  lastUpdated: data.lastUpdated || '',
+  tags: Array.isArray(data.tags) ? data.tags : [],
+  bodyMarkdown,
+  contentHtml: md.render(bodyMarkdown),
+});
+
 researchRouter.get('/', async (req, res) => {
   try {
     const dataDir = req.app.locals.dataDir;
@@ -41,14 +51,7 @@ researchRouter.get('/:slug', async (req, res) => {
     const raw = await fs.readFile(filePath, 'utf-8');
     const { data, content } = matter(raw);
 
-    res.json({
-      slug: req.params.slug,
-      title: data.title || req.params.slug.replace(/-/g, ' '),
-      status: data.status || 'not-started',
-      lastUpdated: data.lastUpdated || '',
-      tags: data.tags || [],
-      content: md.render(content),
-    });
+    res.json(toTopicResponse(req.params.slug, data, content));
   } catch (err: any) {
     if (err.code === 'ENOENT') {
       res.status(404).json({ error: 'Research topic not found' });
@@ -89,11 +92,7 @@ researchRouter.post('/', async (req, res) => {
     const fileContent = matter.stringify(content, frontmatter);
     await fs.writeFile(filePath, fileContent, 'utf-8');
 
-    res.status(201).json({
-      slug,
-      ...frontmatter,
-      content: md.render(content),
-    });
+    res.status(201).json(toTopicResponse(slug, frontmatter, content));
   } catch (err) {
     res.status(500).json({ error: 'Failed to create research topic' });
   }
@@ -108,23 +107,28 @@ researchRouter.put('/:slug', async (req, res) => {
     }
 
     const filePath = path.join(dataDir, 'research', `${req.params.slug}.md`);
-    const { title, status, tags, content } = req.body;
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const { data: existingFrontmatter, content: existingBodyMarkdown } = matter(raw);
+    const { title, status, tags, bodyMarkdown, content } = req.body;
+    const hasBodyMarkdown = Object.prototype.hasOwnProperty.call(req.body, 'bodyMarkdown');
+    const hasLegacyContent = Object.prototype.hasOwnProperty.call(req.body, 'content');
+    const nextBodyMarkdown = hasBodyMarkdown
+      ? bodyMarkdown
+      : hasLegacyContent
+        ? content
+        : existingBodyMarkdown;
 
     const frontmatter: any = {
-      title: title || req.params.slug.replace(/-/g, ' '),
-      status: status || 'not-started',
+      title: title || existingFrontmatter.title || req.params.slug.replace(/-/g, ' '),
+      status: status || existingFrontmatter.status || 'not-started',
       lastUpdated: new Date().toISOString().split('T')[0],
-      tags: tags || [],
+      tags: Array.isArray(tags) ? tags : Array.isArray(existingFrontmatter.tags) ? existingFrontmatter.tags : [],
     };
 
-    const fileContent = matter.stringify(content || '', frontmatter);
+    const fileContent = matter.stringify(nextBodyMarkdown ?? '', frontmatter);
     await fs.writeFile(filePath, fileContent, 'utf-8');
 
-    res.json({
-      slug: req.params.slug,
-      ...frontmatter,
-      content: md.render(content || ''),
-    });
+    res.json(toTopicResponse(req.params.slug, frontmatter, nextBodyMarkdown ?? ''));
   } catch (err: any) {
     if (err.code === 'ENOENT') {
       res.status(404).json({ error: 'Research topic not found' });

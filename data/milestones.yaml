@@ -2,84 +2,66 @@ milestones:
   - id: planning-and-decision
     title: Planning & Decision
     category: general
-    targetDate: '2026-04-15'
+    targetDate: '2026-06-01'
     status: in-progress
     notes: Finalize relocation decision, set budget, and establish timeline for the move!
-  - id: visa-work-permit
-    title: Visa / Work Permit Application
-    category: work-and-visas
-    targetDate: '2026-04-30'
-    status: in-progress
-    notes: Submit visa application and gather all required documentation. Allow 8-12 weeks for processing.
   - id: housing-research
-    title: Housing Research
+    title: Book Temp Accommodation
     category: accommodation-and-housing
-    targetDate: '2026-05-15'
+    targetDate: '2026-07-01'
     status: pending
-    notes: Research neighborhoods in London, understand rental market, set housing budget.
+    notes: Confirm temp housing for Perth after arrival
   - id: pet-preparation
-    title: Pet Preparation
+    title: Misha Ready To Travel
     category: pet
-    targetDate: '2026-05-30'
+    targetDate: '2026-11-01'
     status: pending
-    notes: Vaccinations, microchip, rabies titer test, USDA health certificate. UK has no quarantine for compliant pets.
+    notes: 180-day period finishes 7th Sep, but may be unable to travel on Emirates before 1st Nov.
   - id: shipping-quotes
     title: Shipping Quotes & Provider Selection
     category: shipping-and-freight
     targetDate: '2026-06-01'
     status: pending
     notes: Get at least 3 quotes for international shipping. Compare container vs shared options.
-  - id: accommodation-secured
-    title: Accommodation Secured
-    category: accommodation-and-housing
-    targetDate: '2026-06-30'
-    status: pending
-    notes: Sign lease or confirm temporary accommodation for arrival. Consider 1-2 month overlap.
   - id: shipping-booked
     title: Shipping / Freight Booked
     category: shipping-and-freight
-    targetDate: '2026-07-01'
+    targetDate: '2026-08-01'
     status: pending
     notes: Book shipping provider, confirm pickup date, arrange insurance.
   - id: vehicle-arrangements
     title: Vehicle Arrangements
     category: cars
-    targetDate: '2026-07-15'
+    targetDate: '2026-09-01'
     status: pending
-    notes: Sell current vehicle in US. Research UK driving license requirements and car options.
-  - id: furniture-decisions
-    title: Furniture Decisions
-    category: furniture
-    targetDate: '2026-07-15'
-    status: pending
-    notes: Decide what to ship, sell, donate, or buy new in London. Factor in voltage differences.
-  - id: pre-departure-admin
-    title: Pre-Departure Admin
+    notes: Book vehicle for Perth arrival
+  - id: flights-booked
+    title: Flights Booked
     category: general
-    targetDate: '2026-08-01'
+    targetDate: '2026-10-01'
     status: pending
-    notes: Banking, mail forwarding, cancel/transfer subscriptions, notify relevant parties of move.
+    notes: Book flights from Dubai to Perth
   - id: packing-shipping-day
     title: Packing & Shipping Day
     category: shipping-and-freight
-    targetDate: '2026-08-15'
+    targetDate: '2026-11-01'
     status: pending
     notes: Professional packers arrive. Inventory all items. Confirm shipping paperwork.
   - id: travel-flight-day
     title: Travel / Flight Day
     category: general
-    targetDate: '2026-09-01'
+    targetDate: '2026-11-01'
     status: pending
-    notes: Final departure from San Francisco. Confirm pet travel arrangements.
+    notes: Final departure from Dubai.
   - id: arrival-initial-setup
     title: Arrival & Initial Setup
     category: general
-    targetDate: '2026-09-02'
+    targetDate: '2026-11-01'
     status: pending
-    notes: Arrive in London. Check into temporary accommodation. Get SIM card, transport card.
+    notes: Arrive in Perth. Check into temporary accommodation.
   - id: post-arrival-admin
     title: Post-Arrival Admin
     category: general
-    targetDate: '2026-10-01'
+    targetDate: '2026-11-01'
     status: pending
-    notes: Register with GP, open UK bank account, set up utilities, register for council tax.
+    notes: Register with local authorities, set up bank account, get health insurance sorted.
