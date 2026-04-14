@@ -12,9 +12,9 @@ import MilestoneDialog from '@/components/dialogs/MilestoneDialog';
 const statusColor = (status: string) => {
   switch (status) {
     case 'completed':
-      return 'bg-green-500';
+      return 'bg-emerald-500';
     case 'in-progress':
-      return 'bg-blue-500';
+      return 'bg-primary';
     default:
       return 'bg-muted-foreground/40';
   }
