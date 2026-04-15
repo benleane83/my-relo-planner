@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { LayoutDashboard, BookOpen, CalendarDays, ListChecks, ShoppingCart, Menu, Globe } from 'lucide-react';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -91,7 +92,15 @@ export default function AppLayout() {
             <Menu className="size-5" />
           </Button>
           <span className="text-sm font-semibold">Relo Planner</span>
+          <div className="ml-auto">
+            <ThemeToggle />
+          </div>
         </header>
+
+        {/* Desktop top bar — theme toggle */}
+        <div className="hidden items-center justify-end border-b px-6 py-2 md:flex">
+          <ThemeToggle />
+        </div>
 
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />

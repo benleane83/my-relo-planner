@@ -1,25 +1,161 @@
 tasks:
+  - id: task-001
+    title: Confirm intra-company transfer details with HR
+    category: work-and-visas
+    milestone: visa-and-work
+    status: done
+    priority: high
+    dueDate: '2026-04-10'
+    notes: HR confirmed London office placement. Start date 1st August. Salary adjustment agreed.
   - id: task-002
+    title: Submit ICT visa application for Mark
+    category: work-and-visas
+    milestone: visa-and-work
+    status: in-progress
+    priority: high
+    dueDate: '2026-04-30'
+    notes: Intra-Company Transfer visa. Employer sponsorship letter received. Biometrics appointment booked for 20th April.
+  - id: task-003
+    title: Submit dependent visa application for Lisa
+    category: work-and-visas
+    milestone: visa-and-work
+    status: todo
+    priority: high
+    dueDate: '2026-05-01'
+    notes: Can apply once Mark's visa is approved. Need proof of relationship, financial evidence.
+  - id: task-004
     title: Get international shipping quotes
     category: shipping-and-freight
     milestone: shipping-quotes
+    status: in-progress
+    priority: medium
+    dueDate: '2026-05-01'
+    notes: Contacted Allied Pickfords and Santa Fe. Awaiting quote from Crown Relocations. Compare groupage vs FCL.
+  - id: task-005
+    title: Research London neighbourhoods for rental
+    category: accommodation-and-housing
+    milestone: housing-secured
+    status: in-progress
+    priority: medium
+    dueDate: '2026-05-15'
+    notes: Looking at Putney, Richmond, Wimbledon, Clapham. Need pet-friendly, 2-bed, good transport links.
+  - id: task-006
+    title: Book temporary accommodation in London
+    category: accommodation-and-housing
+    milestone: temp-accommodation
     status: todo
     priority: medium
-    dueDate: '2026-06-01'
-    notes: Contact Allied, Santa Fe and Seven Seas. Compare FCL vs LCL options.
-  - id: task-003
-    title: Misha's RNATT test
+    dueDate: '2026-05-15'
+    notes: Serviced apartment near office for first 2-4 weeks. Check Sonder, The Residence, or Airbnb.
+  - id: task-007
+    title: Snoopy rabies vaccination booster
     category: pet
     milestone: pet-preparation
     status: done
     priority: high
-    dueDate: '2026-03-11'
-    notes: Test result dated 11th March, so 180-day period will start and finish early Sept.
+    dueDate: '2026-03-15'
+    notes: Booster given 15th March at Dubai Vet Clinic. Certificate obtained. Valid until March 2027.
+  - id: task-008
+    title: Snoopy microchip verification
+    category: pet
+    milestone: pet-preparation
+    status: done
+    priority: high
+    dueDate: '2026-03-15'
+    notes: ISO-compliant microchip confirmed readable. Number recorded on vaccination certificate.
   - id: task-009
-    title: Book temporary accommodation for first month
-    category: accommodation-and-housing
-    milestone: accommodation-secured
+    title: Get Animal Health Certificate for Snoopy
+    category: pet
+    milestone: pet-preparation
+    status: todo
+    priority: high
+    dueDate: '2026-07-05'
+    notes: AHC must be issued within 10 days of travel. Book vet appointment for early July. Includes tapeworm treatment 1-5 days before travel.
+  - id: task-010
+    title: Book Snoopy's flight and cargo space
+    category: pet
+    milestone: pet-preparation
     status: todo
     priority: medium
-    dueDate: '2026-10-01'
-    notes: Need Shabnam's accommodation for while renovation is happening.
+    dueDate: '2026-06-15'
+    notes: Emirates SkyCargo or British Airways pet cargo. Need IATA-approved crate. Snoopy is too large for cabin.
+  - id: task-011
+    title: Sell car in Dubai
+    category: cars
+    milestone: vehicle-sold
+    status: todo
+    priority: medium
+    dueDate: '2026-06-15'
+    notes: 2022 Toyota RAV4. Check Dubizzle, Cars24, and dealer trade-in offers. Need to clear any traffic fines first.
+  - id: task-012
+    title: Cancel Dubai utilities and subscriptions
+    category: general
+    milestone: travel-flight-day
+    status: todo
+    priority: low
+    dueDate: '2026-07-10'
+    notes: DEWA, Du/Etisalat, gym membership, streaming services (switch regions), pet insurance.
+  - id: task-013
+    title: Book flights Dubai to London
+    category: general
+    milestone: flights-booked
+    status: todo
+    priority: medium
+    dueDate: '2026-06-01'
+    notes: Emirates direct DXB to LHR preferred. Check baggage allowance for excess luggage.
+  - id: task-014
+    title: Open UK bank account
+    category: general
+    milestone: post-arrival-admin
+    status: todo
+    priority: medium
+    dueDate: '2026-07-20'
+    notes: Monzo or Starling can be opened before arrival with passport. HSBC Expat account also an option.
+  - id: task-015
+    title: Register with NHS GP
+    category: general
+    milestone: post-arrival-admin
+    status: todo
+    priority: low
+    dueDate: '2026-08-01'
+    notes: Register with local GP surgery once permanent address is confirmed.
+  - id: task-016
+    title: Apply for National Insurance number
+    category: general
+    milestone: post-arrival-admin
+    status: todo
+    priority: medium
+    dueDate: '2026-07-25'
+    notes: Apply online or call DWP. Need proof of right to work in UK. Required for employment.
+  - id: task-017
+    title: Arrange contents insurance for shipping
+    category: shipping-and-freight
+    milestone: shipping-booked
+    status: todo
+    priority: medium
+    dueDate: '2026-06-01'
+    notes: Get transit insurance quote. Compare shipping company's own insurance vs third-party.
+  - id: task-018
+    title: Create inventory of items to ship vs sell vs donate
+    category: shipping-and-freight
+    milestone: shipping-quotes
+    status: in-progress
+    priority: medium
+    dueDate: '2026-04-30'
+    notes: Categorising furniture, electronics, personal items. Most large furniture to sell — different plugs/voltage in UK.
+  - id: task-019
+    title: Close UAE bank accounts and transfer funds
+    category: general
+    milestone: travel-flight-day
+    status: todo
+    priority: high
+    dueDate: '2026-07-10'
+    notes: Transfer savings to UK account. Keep one account open briefly for final salary. Check Wise for best FX rates.
+  - id: task-020
+    title: Research UK car options
+    category: cars
+    milestone: post-arrival-admin
+    status: todo
+    priority: low
+    dueDate: '2026-08-01'
+    notes: May not need a car in London immediately. Research lease vs buy. Check if Dubai license can be exchanged.
