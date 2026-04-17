@@ -141,7 +141,9 @@ Top-level `budget` field with `total` and per-category limits. Items stored in t
     - Vertical timeline visualization of milestones, color-coded by status
     - Group by category or linear chronological view
 15. **Tasks page**
-    - Grouped by category (accordion or tabs)
+    - Grouped by category tabs with an All view
+    - Header toggle switches between the default List layout and a Board layout grouped into Todo, In Progress, Blocked, and Done columns
+    - List and Board views both respect the active category tab
     - Each task shows status badge, priority, due date
     - Filter/sort controls
 16. **Shopping page**
@@ -182,9 +184,10 @@ Top-level `budget` field with `total` and per-category limits. Items stored in t
 2. Each API endpoint returns correct data from seed files
 3. Edit a data file while the server is running — UI updates without restart
 4. All 5 pages render with seed data
-5. Budget calculations and currency conversions are correct on the Shopping page
-6. Mobile viewport — sidebar collapses, content is readable
-7. `npm run build` — no TypeScript or build errors
+5. Tasks page defaults to List view, Board view groups tasks into the four status columns, and category tabs keep their filter when switching views
+6. Budget calculations and currency conversions are correct on the Shopping page
+7. Mobile viewport — sidebar collapses, content is readable
+8. `npm run build` — no TypeScript or build errors
 
 ## Design Decisions
 

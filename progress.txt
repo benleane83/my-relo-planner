@@ -1,0 +1,20 @@
+# Progress Log
+
+Completed: Review the existing Tasks page structure and identify the smallest integration point for a List/Board view toggle without changing current list behavior - introduced a single TaskView renderer inside each Tasks tab panel so a future List/Board switch can branch there while preserving the existing TaskList path and category tab behavior.
+
+[2026-04-17T05:58:30.531Z] ✅ Completed: Review the existing Tasks page structure and identify the smallest integration point for a List/Board view toggle without changing current list behavior (took 212s)
+
+Completed: Add a header toggle button group that switches between List and Board views and defaults safely to the existing list experience - added a header List/Board control on the Tasks page, wired explicit view state through TaskView, and kept Board mode on the existing TaskList renderer for a safe default until the board layout lands.
+[2026-04-17T06:13:05.646Z] ✅ Completed: Add a header toggle button group that switches between List and Board views and defaults safely to the existing list experience (took 863s)
+
+Completed: Implement the Board view layout with four equal-width columns for Todo, In Progress, Blocked, and Done, including color-coded headers and task count badges - replaced the Board mode fallback renderer with a dedicated four-column task board grouped by status, added color-coded column headers with count badges, and kept the existing list view path unchanged.
+[2026-04-17T06:15:32.915Z] ✅ Completed: Implement the Board view layout with four equal-width columns for Todo, In Progress, Blocked, and Done, including color-coded headers and task count badges (took 135s)
+
+Completed: Create reusable task board cards using existing shadcn/ui Card, Badge, and Button patterns to show title, category, priority, and due date - extracted the board task UI into a reusable TaskBoardCard component, composed it with shadcn Card header/content/footer patterns, and added badge-based category, priority, and due date presentation while keeping board actions intact.
+[2026-04-17T06:19:20.658Z] ✅ Completed: Create reusable task board cards using existing shadcn/ui Card, Badge, and Button patterns to show title, category, priority, and due date (took 216s)
+
+Completed: Configure board column scrolling, responsive layout behavior, and status-based task grouping so overflow is handled cleanly while preserving usability - updated the board to group tasks in a single pass by status, added horizontal scrolling for narrow screens, and made each board column independently scroll so long task lists stay usable without collapsing the layout.
+[2026-04-17T06:22:08.925Z] ✅ Completed: Configure board column scrolling, responsive layout behavior, and status-based task grouping so overflow is handled cleanly while preserving usability (took 156s)
+
+Completed: Verify the Tasks page behavior in both views and add or update targeted tests/documentation for the new board view interaction - added focused Vitest coverage for default list rendering, board grouping, and category-filter persistence across view switches, then updated the spec to document the List/Board Tasks behavior.
+[2026-04-17T07:36:31.099Z] ✅ Completed: Verify the Tasks page behavior in both views and add or update targeted tests/documentation for the new board view interaction (took 4450s)
