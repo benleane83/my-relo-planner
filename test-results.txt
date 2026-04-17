@@ -1,0 +1,287 @@
+
+> my-relo-planner@0.0.0 test
+> vitest run src\pages\__tests__\Timeline.conflicts.test.tsx
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.4 [39m[90mZ:/repos/my-relo-planner[39m
+
+ [31mÔØ»[39m src/pages/__tests__/Timeline.conflicts.test.tsx [2m([22m[2m18 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 6762[2mms[22m[39m
+       [33m[2mÔ£ô[22m[39m detects when task dueDate is after milestone targetDate [33m 2298[2mms[22m[39m
+       [33m[2mÔ£ô[22m[39m detects multiple scheduling conflicts [33m 432[2mms[22m[39m
+       [33m[2mÔ£ô[22m[39m does not flag tasks with dueDate before or on milestone targetDate [33m 444[2mms[22m[39m
+       [32mÔ£ô[39m detects when task is due within 7 days but prerequisite tasks are not done[32m 240[2mms[22m[39m
+       [32mÔ£ô[39m detects when task is overdue and prerequisite tasks are not done[32m 181[2mms[22m[39m
+       [32mÔ£ô[39m does not flag dependency gaps when prerequisite tasks are done[32m 159[2mms[22m[39m
+       [32mÔ£ô[39m does not flag tasks with status blocked for dependency gaps[32m 226[2mms[22m[39m
+       [32mÔ£ô[39m detects tasks with status blocked[32m 158[2mms[22m[39m
+       [32mÔ£ô[39m detects milestones within 14 days where all linked tasks are incomplete[32m 201[2mms[22m[39m
+       [32mÔ£ô[39m does not flag milestones within 14 days if at least one task is done[32m 159[2mms[22m[39m
+       [32mÔ£ô[39m does not flag milestones beyond 14 days even if all tasks incomplete[32m 119[2mms[22m[39m
+       [32mÔ£ô[39m shows success message when no conflicts are detected[32m 117[2mms[22m[39m
+       [32mÔ£ô[39m shows success message with empty milestones and tasks[32m 100[2mms[22m[39m
+[31m       [31m├ù[31m detects and displays multiple conflict types simultaneously[39m[33m 1333[2mms[22m[39m
+       [32mÔ£ô[39m handles tasks without milestone assignment[32m 163[2mms[22m[39m
+       [32mÔ£ô[39m handles milestones with no linked tasks[32m 148[2mms[22m[39m
+       [32mÔ£ô[39m handles invalid date formats gracefully[32m 130[2mms[22m[39m
+       [32mÔ£ô[39m does not show conflicts section while loading[32m 53[2mms[22m[39m
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ» Failed Tests 1 ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»
+
+ FAIL  src/pages/__tests__/Timeline.conflicts.test.tsx > Timeline - Smart Conflicts Detection > Mixed conflict scenarios > detects and displays multiple conflict types simultaneously
+TestingLibraryElementError: Found multiple elements with the text: Milestone at risk
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+<div
+  class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+  data-slot="alert-title"
+>
+  Milestone at risk
+</div>
+
+Ignored nodes: comments, script, style
+<div
+  class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+  data-slot="alert-title"
+>
+  Milestone at risk
+</div>
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="flex flex-col gap-4"
+    >
+      <h2
+        class="text-2xl font-bold tracking-tight"
+      >
+        Timeline
+      </h2>
+      <div
+        class="flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 pb-2"
+          data-slot="card-header"
+        >
+          <div
+            class="flex items-center justify-between"
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <div
+                class="font-semibold text-base"
+                data-slot="card-title"
+              >
+                Smart Conflict Detection
+              </div>
+              <span
+                class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 bg-destructive text-white focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90"
+                data-slot="badge"
+                data-variant="destructive"
+              >
+                4
+                 conflict
+                s
+              </span>
+            </div>
+            <button
+              class="inline-flex shrink-0 items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5"
+              data-size="sm"
+              data-slot="button"
+              data-variant="ghost"
+            />
+          </div>
+        </div>
+        <div
+          class="px-6 pt-0"
+          data-slot="card-content"
+        >
+          <div
+            class="flex flex-col gap-3"
+          >
+            <div
+              class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+              data-slot="alert"
+              role="alert"
+            >
+              <div
+                class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                data-slot="alert-title"
+              >
+                Scheduling conflict
+              </div>
+              <div
+                class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed"
+                data-slot="alert-description"
+              >
+                Task "Submit visa application" is due 27/04/2026 but milestone "Visa & Work Transfer" targets 22/04/2026
+              </div>
+            </div>
+            <div
+              class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+              data-slot="alert"
+              role="alert"
+            >
+              <div
+                class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                data-slot="alert-title"
+              >
+                Task blocked
+              </div>
+              <div
+                class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed"
+                data-slot="alert-description"
+              >
+                Task "Blocked task" is currently blocked. No details provided.
+              </div>
+            </div>
+            <div
+              class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+              data-slot="alert"
+              role="alert"
+            >
+              <div
+                class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                data-slot="alert-title"
+              >
+                Milestone at risk
+              </div>
+              <div
+                class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed"
+                data-slot="alert-description"
+              >
+                Milestone "Visa & Work Transfer" is 4 days away but all 2 linked task(s) are incomplete
+              </div>
+    ...
+
+Ignored nodes: comments, script, style
+<html>
+  <head />
+  <body>
+    <div>
+      <div
+        class="flex flex-col gap-4"
+      >
+        <h2
+          class="text-2xl font-bold tracking-tight"
+        >
+          Timeline
+        </h2>
+        <div
+          class="flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm"
+          data-slot="card"
+        >
+          <div
+            class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 pb-2"
+            data-slot="card-header"
+          >
+            <div
+              class="flex items-center justify-between"
+            >
+              <div
+                class="flex items-center gap-2"
+              >
+                <div
+                  class="font-semibold text-base"
+                  data-slot="card-title"
+                >
+                  Smart Conflict Detection
+                </div>
+                <span
+                  class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3 bg-destructive text-white focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90"
+                  data-slot="badge"
+                  data-variant="destructive"
+                >
+                  4
+                   conflict
+                  s
+                </span>
+              </div>
+              <button
+                class="inline-flex shrink-0 items-center justify-center text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5"
+                data-size="sm"
+                data-slot="button"
+                data-variant="ghost"
+              />
+            </div>
+          </div>
+          <div
+            class="px-6 pt-0"
+            data-slot="card-content"
+          >
+            <div
+              class="flex flex-col gap-3"
+            >
+              <div
+                class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+                data-slot="alert"
+                role="alert"
+              >
+                <div
+                  class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                  data-slot="alert-title"
+                >
+                  Scheduling conflict
+                </div>
+                <div
+                  class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed"
+                  data-slot="alert-description"
+                >
+                  Task "Submit visa application" is due 27/04/2026 but milestone "Visa & Work Transfer" targets 22/04/2026
+                </div>
+              </div>
+              <div
+                class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+                data-slot="alert"
+                role="alert"
+              >
+                <div
+                  class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                  data-slot="alert-title"
+                >
+                  Task blocked
+                </div>
+                <div
+                  class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed"
+                  data-slot="alert-description"
+                >
+                  Task "Blocked task" is currently blocked. No details provided.
+                </div>
+              </div>
+              <div
+                class="relative grid w-full grid-cols-[0_1fr] items-start gap-y-0.5 rounded-lg border px-4 py-3 text-sm has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] has-[>svg]:gap-x-3 [&>svg]:size-4 [&>svg]:translate-y-0.5 text-destructive *:data-[slot=alert-description]:text-destructive/90 [&>svg]:text-current border-destructive/50 bg-destructive/10"
+                data-slot="alert"
+                role="alert"
+              >
+                <div
+                  class="col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight"
+                  data-slot="alert-title"
+                >
+                  Milestone at risk
+                </div>
+                <div
+                  class="col-start-2 grid justify-items-start gap-1 text-sm text-muted-foreground [&_p]:leading-relaxed...
+ ÔØ» Proxy.waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ÔØ» src/pages/__tests__/Timeline.conflicts.test.tsx:838:13
+    836|
+    837|       // Assert specific conflict types are detected
+    838|       await waitFor(() => {
+       |             ^
+    839|         expect(screen.getByText('Scheduling conflict')).toBeInTheDocumÔÇª
+    840|         expect(screen.getByText('Task blocked')).toBeInTheDocument();
+
+ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»ÔÄ»[1/1]ÔÄ»
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m17 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 14:02:11
+[2m   Duration [22m 46.84s[2m (transform 3.52s, setup 3.29s, import 15.98s, tests 6.76s, environment 19.17s)[22m
+
