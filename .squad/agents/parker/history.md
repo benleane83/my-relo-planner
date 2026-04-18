@@ -7,6 +7,16 @@
 
 ## Learnings
 
+### 2026-04-18: Timeline conflicts review
+**What:** Reviewed Dallas's Timeline conflicts implementation against the prompt, current YAML data, and the working-tree tests.
+**Files:** `.github\prompts\build-timeline-conflicts.prompt.md`, `src\pages\Timeline.tsx`, `src\pages\__tests__\Timeline.test.tsx`, `data\milestones.yaml`, `data\tasks.yaml`, `server\routes\tasks.ts`
+**Learnings:**
+- The current client model has no explicit dependency field or ordering field for tasks; any "prerequisite" logic must infer order from due dates or raw YAML order.
+- `server\routes\tasks.ts` returns `tasks.yaml` in file order, so sort choices in the client directly change dependency-gap results.
+- With current sample data, the new logic raises a milestone-level blocker for `shipping-quotes` because all linked tasks are incomplete and the target date is within 14 days, even though neither task is blocked.
+- `src\pages\__tests__\Timeline.test.tsx` currently disagrees with the implementation on total conflict count, so the conflict criteria still need alignment before this is considered stable.
+- Validation path used here: `npm run build`, `npm run test -- src\pages\__tests__\Tasks.test.tsx`, and `npm run test -- src\pages\__tests__\Timeline.test.tsx`.
+
 ### 2026-04-17: Timeline Conflicts Feature Testing
 **What:** Created comprehensive test suite for Smart Timeline Conflicts feature
 **File:** `src\pages\__tests__\Timeline.conflicts.test.tsx`
@@ -39,3 +49,10 @@
 ### 2026-04-17: Sync follow-up — Tightened assertions
 **What:** Further refined dependency-gap test assertions to avoid broad text matches and ensure targeted validation.
 **Result:** All Timeline tests now passing with focused, behavior-driven assertions. Build passing. Feature validated and production-ready.
+
+### 2026-04-18 — Team coordination: Timeline conflicts finalized
+- Reviewed conflict rules and rejected first pass due to expectation/rule mismatches
+- Established testing pattern: Component-specific test files with suffix (e.g., `Timeline.conflicts.test.tsx`)
+- Created reference implementation of `src/lib/timeline-conflicts.ts` with 26 comprehensive unit tests
+- Clarified "within 14 days" as absolute window (upcoming + recently overdue, not forever)
+- Final build and test validation passed with all 6 tests aligned: `npm run build && npm run test`

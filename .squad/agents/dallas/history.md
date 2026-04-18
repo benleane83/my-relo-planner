@@ -43,3 +43,16 @@
 - Collaborated with Parker on test suite fixes; feature now fully integrated
 - Milestone blocker coverage expanded to near-due and overdue cases
 - Ready for user deployment
+
+### 2026-04-18 — Timeline conflicts view refresh
+- Timeline conflict UI lives in `src\pages\Timeline.tsx` as a collapsible card above the milestone timeline and uses existing shadcn `Card`, `Badge`, `Alert`, and `Separator` components
+- Conflict detection is centralized in `src\lib\timeline-conflicts.ts`, with page rendering driven from a `useMemo` result and shared local-date formatting via `formatTimelineDate`
+- Severity pattern is blocker = destructive/red, scheduling conflict = amber, dependency gap = yellow, with a green zero-conflict success state
+- Regression coverage now lives in `src\lib\__tests__\timeline-conflicts.test.ts` and `src\pages\__tests__\Timeline.test.tsx`; `src\pages\__tests__\Tasks.test.tsx` needs longer per-test timeouts when the whole Vitest suite runs together
+
+### 2026-04-18 — Team coordination: Timeline conflicts finalized
+- Implemented Smart Timeline Conflicts UI with Ripley's extracted shared logic and clarified rules
+- Treated overdue milestones with all linked tasks incomplete as critical blockers (absolute window, not just 14-day future)
+- Coordinated with Parker (test review) and Kane (test alignment) to ensure all 6 tests pass
+- Final build and test validation passed: `npm run build && npm run test`
+- Feature ready for deployment
