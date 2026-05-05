@@ -235,7 +235,7 @@ function TaskKanban({ tasks, onEdit, onDelete }: { tasks: Task[]; onEdit: (task:
               'flex flex-col gap-2 rounded-lg border p-3 transition-colors',
               isOver ? 'bg-accent/60' : 'bg-background'
             )}
-            onDragOver={(e) => { e.preventDefault(); setDragOverCol(status); }}
+            onDragOver={(e) => { e.preventDefault(); if (dragOverCol !== status) setDragOverCol(status); }}
             onDragLeave={() => setDragOverCol(null)}
             onDrop={() => handleDrop(status)}
           >
