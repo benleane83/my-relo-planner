@@ -1,6 +1,6 @@
-# My Relo Planner
+# My Relocation Planner
 
-My Relo Planner is a relocation planning app for managing the practical work around an international move. It combines schedule tracking, research notes, task management, and shopping budget monitoring in a single local web application backed by editable data files.
+My Relocation Planner is a relocation planning app for managing the practical work around an international move. It combines schedule tracking, research notes, task management, and shopping budget monitoring in a single local web application backed by editable data files.
 
 ![My Relo Planner dashboard](docs/images/homepage-dashboard.png)
 

@@ -21,7 +21,7 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
         <div className="flex size-8 items-center justify-center rounded-lg bg-primary/15">
           <Globe className="size-4 text-primary" />
         </div>
-        <h1 className="text-lg font-semibold tracking-tight">Relo Planner</h1>
+        <h1 className="text-lg font-semibold tracking-tight">Relocation Planner</h1>
       </div>
       <Separator />
       <nav className="flex flex-1 flex-col gap-1 p-3">
@@ -91,7 +91,7 @@ export default function AppLayout() {
           >
             <Menu className="size-5" />
           </Button>
-          <span className="text-sm font-semibold">Relo Planner</span>
+          <span className="text-sm font-semibold">Relocation Planner</span>
           <div className="ml-auto">
             <ThemeToggle />
           </div>
