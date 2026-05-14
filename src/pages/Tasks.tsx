@@ -1,78 +1,108 @@
-import { useMemo, useState } from 'react';
-import { useTasks, useDeleteTask } from '@/hooks/useApi';
-import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useEffect, useMemo, useState } from 'react';
+import { useTasks, useDeleteTask, useUpdateTask } from '@/hooks/useApi';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Skeleton } from '@/components/ui/skeleton';
-import { PlusIcon, PencilIcon, TrashIcon } from 'lucide-react';
+import { PlusIcon } from 'lucide-react';
 import type { Task } from '@/types';
 import TaskDialog from '@/components/dialogs/TaskDialog';
-
-const statusOrder: Record<string, number> = {
-  blocked: 0,
-  'in-progress': 1,
-  todo: 2,
-  done: 3,
-};
-
-const statusVariant = (status: string) => {
-  switch (status) {
-    case 'done':
-      return 'outline' as const;
-    case 'in-progress':
-      return 'default' as const;
-    case 'blocked':
-      return 'destructive' as const;
-    default:
-      return 'secondary' as const;
-  }
-};
-
-const priorityVariant = (priority: string) => {
-  switch (priority) {
-    case 'high':
-      return 'destructive' as const;
-    case 'medium':
-      return 'default' as const;
-    default:
-      return 'secondary' as const;
-  }
-};
-
-function sortTasks<T extends { status: string; dueDate: string }>(tasks: T[]): T[] {
-  return [...tasks].sort((a, b) => {
-    const statusDiff = (statusOrder[a.status] ?? 99) - (statusOrder[b.status] ?? 99);
-    if (statusDiff !== 0) return statusDiff;
-    return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
-  });
-}
+import TaskKanbanBoard from '@/components/tasks/TaskKanbanBoard';
 
 export default function Tasks() {
   const { data: tasks, isLoading } = useTasks();
   const deleteMutation = useDeleteTask();
+  const updateTaskMutation = useUpdateTask();
+
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editTask, setEditTask] = useState<Task | null>(null);
+  const [activeTab, setActiveTab] = useState('all');
+  const [moveError, setMoveError] = useState<string | null>(null);
+  const [movingTaskIds, setMovingTaskIds] = useState<Record<string, boolean>>({});
+  const [optimisticStatuses, setOptimisticStatuses] = useState<Partial<Record<string, Task['status']>>>({});
 
   const categories = useMemo(() => {
     if (!tasks) return [];
     return Array.from(new Set(tasks.map((t) => t.category))).sort();
   }, [tasks]);
 
-  const sortedAll = useMemo(() => {
+  const visibleTasks = useMemo(() => {
     if (!tasks) return [];
-    return sortTasks(tasks);
+
+    return tasks.map((task) => {
+      const optimisticStatus = optimisticStatuses[task.id];
+      if (!optimisticStatus) return task;
+      return { ...task, status: optimisticStatus };
+    });
+  }, [tasks, optimisticStatuses]);
+
+  useEffect(() => {
+    if (!tasks) return;
+
+    setOptimisticStatuses((prev) => {
+      const next = { ...prev };
+      let changed = false;
+
+      for (const task of tasks) {
+        if (next[task.id] === task.status) {
+          delete next[task.id];
+          changed = true;
+        }
+      }
+
+      return changed ? next : prev;
+    });
   }, [tasks]);
+
+  const tasksForCategory = (category: string | 'all') => {
+    if (category === 'all') return visibleTasks;
+    return visibleTasks.filter((task) => task.category === category);
+  };
+
+  const handleMoveTask = (task: Task, nextStatus: Task['status']) => {
+    const currentStatus = optimisticStatuses[task.id] ?? task.status;
+
+    if (currentStatus === nextStatus || movingTaskIds[task.id]) {
+      return;
+    }
+
+    setMoveError(null);
+    setOptimisticStatuses((prev) => ({ ...prev, [task.id]: nextStatus }));
+    setMovingTaskIds((prev) => ({ ...prev, [task.id]: true }));
+
+    updateTaskMutation.mutate(
+      { id: task.id, status: nextStatus },
+      {
+        onError: (error) => {
+          setOptimisticStatuses((prev) => {
+            const next = { ...prev };
+            if (currentStatus === task.status) {
+              delete next[task.id];
+            } else {
+              next[task.id] = currentStatus;
+            }
+            return next;
+          });
+          setMoveError(error instanceof Error ? error.message : 'Failed to update task status. Please try again.');
+        },
+        onSettled: () => {
+          setMovingTaskIds((prev) => {
+            const next = { ...prev };
+            delete next[task.id];
+            return next;
+          });
+        },
+      }
+    );
+  };
 
   if (isLoading) {
     return (
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold tracking-tight">Tasks</h2>
         <Skeleton className="h-10 w-96" />
-        <div className="flex flex-col gap-3">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Skeleton key={i} className="h-16 w-full" />
+        <div className="flex gap-3 overflow-x-auto">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-96 w-[280px] shrink-0" />
           ))}
         </div>
       </div>
@@ -88,7 +118,7 @@ export default function Tasks() {
         </Button>
       </div>
 
-      <Tabs defaultValue="all">
+      <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="flex flex-wrap">
           <TabsTrigger value="all">All ({tasks?.length ?? 0})</TabsTrigger>
           {categories.map((cat) => (
@@ -99,55 +129,31 @@ export default function Tasks() {
         </TabsList>
 
         <TabsContent value="all" className="mt-4">
-          <TaskList tasks={sortedAll} onEdit={(t) => { setEditTask(t); setDialogOpen(true); }} onDelete={(id) => deleteMutation.mutate(id)} />
+          <TaskKanbanBoard
+            tasks={tasksForCategory('all')}
+            isMovingTask={(id) => !!movingTaskIds[id]}
+            moveError={moveError}
+            onMove={handleMoveTask}
+            onEdit={(task) => { setEditTask(task); setDialogOpen(true); }}
+            onDelete={(id) => deleteMutation.mutate(id)}
+          />
         </TabsContent>
 
         {categories.map((cat) => (
           <TabsContent key={cat} value={cat} className="mt-4">
-            <TaskList tasks={sortTasks(tasks?.filter((t) => t.category === cat) ?? [])} onEdit={(t) => { setEditTask(t); setDialogOpen(true); }} onDelete={(id) => deleteMutation.mutate(id)} />
+            <TaskKanbanBoard
+              tasks={tasksForCategory(cat)}
+              isMovingTask={(id) => !!movingTaskIds[id]}
+              moveError={moveError}
+              onMove={handleMoveTask}
+              onEdit={(task) => { setEditTask(task); setDialogOpen(true); }}
+              onDelete={(id) => deleteMutation.mutate(id)}
+            />
           </TabsContent>
         ))}
       </Tabs>
 
       <TaskDialog open={dialogOpen} onOpenChange={setDialogOpen} task={editTask} categories={categories} />
-    </div>
-  );
-}
-
-function TaskList({ tasks, onEdit, onDelete }: { tasks: Task[]; onEdit: (task: Task) => void; onDelete: (id: string) => void }) {
-  if (tasks.length === 0) {
-    return <p className="text-sm text-muted-foreground">No tasks in this category</p>;
-  }
-
-  return (
-    <div className="flex flex-col gap-3">
-      {tasks.map((task) => (
-        <Card key={task.id}>
-          <CardContent className="flex flex-wrap items-center gap-3 py-3">
-            <span
-              className={cn(
-                'text-sm font-medium',
-                task.status === 'done' && 'text-muted-foreground line-through'
-              )}
-            >
-              {task.title}
-            </span>
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge variant={statusVariant(task.status)}>{task.status}</Badge>
-              <Badge variant={priorityVariant(task.priority)}>{task.priority}</Badge>
-            </div>
-            <span className="ml-auto shrink-0 text-xs text-muted-foreground">
-              {new Date(task.dueDate).toLocaleDateString()}
-            </span>
-            <Button variant="outline" size="icon-xs" onClick={() => onEdit(task)}>
-              <PencilIcon />
-            </Button>
-            <Button variant="ghost" size="icon-xs" className="text-destructive" onClick={() => onDelete(task.id)}>
-              <TrashIcon />
-            </Button>
-          </CardContent>
-        </Card>
-      ))}
     </div>
   );
 }
