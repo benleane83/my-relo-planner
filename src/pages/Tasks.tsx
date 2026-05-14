@@ -38,9 +38,18 @@ export default function Tasks() {
   useEffect(() => {
     if (!tasks) return;
 
+    const taskIds = new Set(tasks.map((task) => task.id));
+
     setOptimisticStatuses((prev) => {
       const next = { ...prev };
       let changed = false;
+
+      for (const taskId of Object.keys(next)) {
+        if (!taskIds.has(taskId)) {
+          delete next[taskId];
+          changed = true;
+        }
+      }
 
       for (const task of tasks) {
         if (next[task.id] === task.status) {
@@ -60,6 +69,7 @@ export default function Tasks() {
 
   const handleMoveTask = (task: Task, nextStatus: Task['status']) => {
     const currentStatus = optimisticStatuses[task.id] ?? task.status;
+    const previousStatus = task.status;
 
     if (currentStatus === nextStatus || movingTaskIds[task.id]) {
       return;
@@ -73,15 +83,7 @@ export default function Tasks() {
       { id: task.id, status: nextStatus },
       {
         onError: (error) => {
-          setOptimisticStatuses((prev) => {
-            const next = { ...prev };
-            if (currentStatus === task.status) {
-              delete next[task.id];
-            } else {
-              next[task.id] = currentStatus;
-            }
-            return next;
-          });
+          setOptimisticStatuses((prev) => ({ ...prev, [task.id]: previousStatus }));
           setMoveError(error instanceof Error ? error.message : 'Failed to update task status. Please try again.');
         },
         onSettled: () => {
@@ -133,6 +135,7 @@ export default function Tasks() {
             tasks={tasksForCategory('all')}
             isMovingTask={(id) => !!movingTaskIds[id]}
             moveError={moveError}
+            showCategoryBadge={activeTab === 'all'}
             onMove={handleMoveTask}
             onEdit={(task) => { setEditTask(task); setDialogOpen(true); }}
             onDelete={(id) => deleteMutation.mutate(id)}
@@ -145,6 +148,7 @@ export default function Tasks() {
               tasks={tasksForCategory(cat)}
               isMovingTask={(id) => !!movingTaskIds[id]}
               moveError={moveError}
+              showCategoryBadge={activeTab === 'all'}
               onMove={handleMoveTask}
               onEdit={(task) => { setEditTask(task); setDialogOpen(true); }}
               onDelete={(id) => deleteMutation.mutate(id)}

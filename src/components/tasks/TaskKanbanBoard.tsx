@@ -42,13 +42,14 @@ interface TaskKanbanBoardProps {
   tasks: Task[];
   isMovingTask: (id: string) => boolean;
   moveError: string | null;
+  showCategoryBadge?: boolean;
   onMove: (task: Task, nextStatus: Task['status']) => void;
   onEdit: (task: Task) => void;
   onDelete: (id: string) => void;
 }
 
-export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove, onEdit, onDelete }: TaskKanbanBoardProps) {
-  const [dragOverStatus, setDragOverStatus] = useState<Task['status'] | null>(null);
+export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, showCategoryBadge = true, onMove, onEdit, onDelete }: TaskKanbanBoardProps) {
+  const [dragDepthByStatus, setDragDepthByStatus] = useState<Partial<Record<Task['status'], number>>>({});
 
   const tasksByStatus = useMemo(() => {
     const grouped: Record<Task['status'], Task[]> = {
@@ -87,16 +88,41 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                 key={column.status}
                 className={cn(
                   'flex w-[280px] flex-col gap-3 rounded-lg border bg-muted/20 p-3',
-                  dragOverStatus === column.status && 'border-primary bg-primary/5'
+                  (dragDepthByStatus[column.status] ?? 0) > 0 && 'border-primary bg-primary/5'
                 )}
+                onDragEnter={(event) => {
+                  event.preventDefault();
+                  setDragDepthByStatus((prev) => ({
+                    ...prev,
+                    [column.status]: (prev[column.status] ?? 0) + 1,
+                  }));
+                }}
                 onDragOver={(event) => {
                   event.preventDefault();
-                  setDragOverStatus(column.status);
                 }}
-                onDragLeave={() => setDragOverStatus((current) => (current === column.status ? null : current))}
+                onDragLeave={(event) => {
+                  event.preventDefault();
+                  setDragDepthByStatus((prev) => {
+                    const next = { ...prev };
+                    const nextDepth = (next[column.status] ?? 0) - 1;
+
+                    if (nextDepth <= 0) {
+                      delete next[column.status];
+                    } else {
+                      next[column.status] = nextDepth;
+                    }
+
+                    return next;
+                  });
+                }}
                 onDrop={(event) => {
                   event.preventDefault();
-                  setDragOverStatus(null);
+                  setDragDepthByStatus((prev) => {
+                    if (!(column.status in prev)) return prev;
+                    const next = { ...prev };
+                    delete next[column.status];
+                    return next;
+                  });
                   const taskId = event.dataTransfer.getData('text/task-id');
                   const task = tasks.find((item) => item.id === taskId);
                   if (task) {
@@ -126,6 +152,7 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                         <Card
                           key={task.id}
                           draggable={!moving}
+                          aria-busy={moving}
                           onDragStart={(event) => {
                             event.dataTransfer.setData('text/task-id', task.id);
                             event.dataTransfer.effectAllowed = 'move';
@@ -139,10 +166,10 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                               </span>
                               <div className="flex items-center gap-1">
                                 <Button variant="outline" size="icon-xs" onClick={() => onEdit(task)} disabled={moving} aria-label={`Edit ${task.title}`}>
-                                  <PencilIcon />
+                                  <PencilIcon aria-hidden="true" />
                                 </Button>
                                 <Button variant="ghost" size="icon-xs" className="text-destructive" onClick={() => onDelete(task.id)} disabled={moving} aria-label={`Delete ${task.title}`}>
-                                  <TrashIcon />
+                                  <TrashIcon aria-hidden="true" />
                                 </Button>
                               </div>
                             </div>
@@ -150,7 +177,7 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                             <div className="flex flex-wrap items-center gap-2">
                               <Badge variant={statusVariant(task.status)}>{task.status}</Badge>
                               <Badge variant={priorityVariant(task.priority)}>{task.priority}</Badge>
-                              {task.category && <Badge variant="outline">{task.category}</Badge>}
+                              {showCategoryBadge && task.category && <Badge variant="outline">{task.category}</Badge>}
                               {task.milestone && <Badge variant="outline">{task.milestone}</Badge>}
                             </div>
 
@@ -165,7 +192,7 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                                 disabled={!previousStatus || moving}
                                 aria-label={`Move ${task.title} to previous column`}
                               >
-                                <ArrowLeftIcon />
+                                <ArrowLeftIcon aria-hidden="true" />
                               </Button>
                               <Button
                                 type="button"
@@ -175,7 +202,7 @@ export default function TaskKanbanBoard({ tasks, isMovingTask, moveError, onMove
                                 disabled={!nextStatus || moving}
                                 aria-label={`Move ${task.title} to next column`}
                               >
-                                <ArrowRightIcon />
+                                <ArrowRightIcon aria-hidden="true" />
                               </Button>
                             </div>
                           </CardContent>
