@@ -1,0 +1,163 @@
+budget:
+  total: 12000
+  categories:
+    furniture: 4000
+    electronics: 2500
+    household: 2000
+    clothing: 1500
+    other: 2000
+
+items:
+  - id: shop-001
+    item: Sofa (3-seater)
+    category: furniture
+    quantity: 1
+    estimatedCost: 1200
+    actualCost: 0
+    currency: GBP
+    status: researching
+    store: IKEA / Made.com
+    notes: Need to check dimensions for London flat. Prefer something deliverable within 2 weeks of arrival.
+
+  - id: shop-002
+    item: UK Power Adapters (multi-pack)
+    category: electronics
+    quantity: 10
+    estimatedCost: 30
+    actualCost: 25
+    currency: GBP
+    status: purchased
+    store: Amazon UK
+    notes: Bought 10-pack of UAE-to-UK adapters. Will also need a few UK extension leads on arrival.
+
+  - id: shop-003
+    item: Mattress (UK King)
+    category: furniture
+    quantity: 1
+    estimatedCost: 800
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ''
+    notes: UK king (150x200cm) is different to UAE sizes. Research Emma, Simba, or Hypnos brands.
+
+  - id: shop-004
+    item: Winter Coats
+    category: clothing
+    quantity: 2
+    estimatedCost: 400
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ''
+    notes: London winters are wet and cold. Need proper waterproof coats — buy before October.
+
+  - id: shop-005
+    item: Voltage Converter (heavy duty)
+    category: electronics
+    quantity: 1
+    estimatedCost: 80
+    actualCost: 0
+    currency: GBP
+    status: researching
+    store: Amazon UK
+    notes: For kitchen appliances that run on 220V/UAE plug. Check if Breville coffee machine needs converter or just adapter.
+
+  - id: shop-006
+    item: Bedding Set (UK King)
+    category: household
+    quantity: 2
+    estimatedCost: 150
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: John Lewis
+    notes: UK king bedding. Buy duvet, pillows, and sheets after mattress decision.
+
+  - id: shop-007
+    item: Kitchen Essentials Starter Kit
+    category: household
+    quantity: 1
+    estimatedCost: 200
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ''
+    notes: Pots, pans, utensils, plates for first week. Ship rest or buy once settled.
+
+  - id: shop-008
+    item: Standing Desk
+    category: furniture
+    quantity: 1
+    estimatedCost: 500
+    actualCost: 0
+    currency: GBP
+    status: researching
+    store: Fully / IKEA
+    notes: Need a good WFH setup immediately. Check if current desk is worth shipping vs buying new.
+
+  - id: shop-009
+    item: Umbrella & Rainwear
+    category: clothing
+    quantity: 3
+    estimatedCost: 80
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: ''
+    notes: Compact umbrellas, waterproof shoes. Essential for London living.
+
+  - id: shop-010
+    item: IATA Dog Travel Crate
+    category: other
+    quantity: 1
+    estimatedCost: 350
+    actualCost: 320
+    currency: AED
+    status: purchased
+    store: Pet Zone Dubai
+    notes: IATA-approved crate for Snoopy. Size large. Purchased and training Snoopy to use it.
+
+  - id: shop-011
+    item: Portable Heater
+    category: electronics
+    quantity: 2
+    estimatedCost: 120
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: Argos / Currys
+    notes: Rental may not have great heating. Good to have backup for first winter.
+
+  - id: shop-012
+    item: Bed Frame (UK King)
+    category: furniture
+    quantity: 1
+    estimatedCost: 600
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: IKEA / Habitat
+    notes: Simple frame with storage if possible. Coordinate delivery with mattress.
+
+  - id: shop-013
+    item: Layering Clothes (Thermals)
+    category: clothing
+    quantity: 4
+    estimatedCost: 120
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: Uniqlo
+    notes: HeatTech thermals — essential base layers for adjusting from Dubai heat to UK cold.
+
+  - id: shop-014
+    item: Smart TV
+    category: electronics
+    quantity: 1
+    estimatedCost: 500
+    actualCost: 0
+    currency: GBP
+    status: needed
+    store: Currys / John Lewis
+    notes: 50-55 inch. Not worth shipping due to voltage and smart TV region settings. Buy new in UK.

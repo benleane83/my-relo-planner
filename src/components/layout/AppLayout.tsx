@@ -3,13 +3,14 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
-import { LayoutDashboard, BookOpen, CalendarDays, ListChecks, ShoppingCart, Menu, Globe } from 'lucide-react';
+import { LayoutDashboard, BookOpen, CalendarDays, CalendarRange, ListChecks, ShoppingCart, Menu, Globe } from 'lucide-react';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/research', label: 'Research', icon: BookOpen },
   { to: '/timeline', label: 'Timeline', icon: CalendarDays },
+  { to: '/calendar', label: 'Calendar', icon: CalendarRange },
   { to: '/tasks', label: 'Tasks', icon: ListChecks },
   { to: '/shopping', label: 'Shopping', icon: ShoppingCart },
 ];
@@ -80,7 +81,7 @@ export default function AppLayout() {
       )}
 
       {/* Main content area */}
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         {/* Mobile header — only on small screens */}
         <header className="flex items-center gap-3 border-b px-4 py-3 md:hidden">
           <Button
@@ -102,7 +103,7 @@ export default function AppLayout() {
           <ThemeToggle />
         </div>
 
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="min-w-0 flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>
       </div>

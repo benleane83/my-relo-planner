@@ -1,0 +1,28 @@
+{
+  "origin": {
+    "city": "Dubai",
+    "country": "UAE"
+  },
+  "destination": {
+    "city": "London",
+    "country": "United Kingdom"
+  },
+  "moveDate": "2026-07-15",
+  "familyMembers": [
+    {
+      "name": "Mark",
+      "notes": "Transferring with current employer to London office"
+    },
+    {
+      "name": "Lisa",
+      "notes": "Job searching in London, Skilled Worker visa dependent"
+    },
+    {
+      "name": "Snoopy",
+      "notes": "Dog — needs UK pet import paperwork (PETS scheme)"
+    }
+  ],
+  "originCurrency": "AED",
+  "destinationCurrency": "GBP",
+  "conversionRate": 0.22
+}

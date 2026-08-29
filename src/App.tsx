@@ -4,6 +4,7 @@ import AppLayout from '@/components/layout/AppLayout';
 import Dashboard from '@/pages/Dashboard';
 import Research from '@/pages/Research';
 import Timeline from '@/pages/Timeline';
+import Calendar from '@/pages/Calendar';
 import Tasks from '@/pages/Tasks';
 import Shopping from '@/pages/Shopping';
 
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/research" element={<Research />} />
             <Route path="/research/:slug" element={<Research />} />
             <Route path="/timeline" element={<Timeline />} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/shopping" element={<Shopping />} />
           </Route>

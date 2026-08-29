@@ -2,78 +2,84 @@ milestones:
   - id: planning-and-decision
     title: Planning & Decision
     category: general
-    targetDate: '2026-04-15'
-    status: completed
-    notes: Relocation from Dubai to London confirmed. Budget set, timeline agreed with employer.
-  - id: visa-and-work
-    title: Visa & Work Transfer Confirmed
-    category: work-and-visas
-    targetDate: '2026-05-01'
+    targetDate: '2026-08-31'
     status: in-progress
-    notes: Mark's intra-company transfer (ICT) visa application submitted. Lisa's dependent visa in progress.
-  - id: housing-secured
-    title: London Rental Secured
+    notes: Finalize relocation decision, set budget, and establish timeline for the move!
+  - id: housing-research
+    title: Book Temp Accommodation
     category: accommodation-and-housing
-    targetDate: '2026-06-01'
+    targetDate: '2026-09-18'
     status: pending
-    notes: Find and sign lease for rental property in London. Targeting zones 2-3 for good commute.
-  - id: temp-accommodation
-    title: Book Temporary Accommodation
-    category: accommodation-and-housing
-    targetDate: '2026-05-15'
+    notes: Confirm temp housing for Perth after arrival
+  - id: pet-preparation
+    title: Misha Ready To Travel
+    category: pet
+    targetDate: '2026-11-01'
     status: pending
-    notes: Book serviced apartment or Airbnb for first 2-4 weeks while finding permanent rental.
+    notes: 180-day period finishes 7th Sep, but may be unable to travel on Emirates before 1st Nov.
   - id: shipping-quotes
     title: Shipping Quotes & Provider Selection
     category: shipping-and-freight
-    targetDate: '2026-05-01'
-    status: in-progress
-    notes: Get at least 3 quotes for international shipping Dubai to UK. Compare FCL vs groupage.
+    targetDate: '2026-08-15'
+    status: completed
+    notes: Get at least 3 quotes for international shipping. Compare container vs shared options.
+  - id: finish-work
+    title: Last Day Of Work
+    category: general
+    targetDate: '2026-09-04'
+    status: pending
+    notes: Last day with Microsoft, so visa cancellation happens automatically.
   - id: shipping-booked
     title: Shipping / Freight Booked
     category: shipping-and-freight
-    targetDate: '2026-06-01'
-    status: pending
-    notes: Book shipping provider, confirm pickup date, arrange transit insurance.
-  - id: pet-preparation
-    title: Snoopy Ready to Travel
-    category: pet
-    targetDate: '2026-07-01'
-    status: in-progress
-    notes: UK PETS scheme requirements — rabies vaccination, microchip, tapeworm treatment, AHC.
-  - id: vehicle-sold
-    title: Dubai Vehicle Sold
+    targetDate: '2026-08-24'
+    status: completed
+    notes: Book shipping provider, confirm pickup date, arrange insurance.
+  - id: vehicle-arrangements
+    title: Vehicle Arrangements
     category: cars
-    targetDate: '2026-06-15'
+    targetDate: '2026-10-17'
     status: pending
-    notes: Sell car in Dubai before departure. Research trade-in vs private sale options.
+    notes: Book vehicle for Perth arrival
   - id: flights-booked
     title: Flights Booked
     category: general
-    targetDate: '2026-06-01'
+    targetDate: '2026-09-18'
     status: pending
-    notes: Book flights Dubai to London for Mark, Lisa, and cargo booking for Snoopy.
+    notes: Book flights from Dubai to Perth
   - id: packing-shipping-day
     title: Packing & Shipping Day
     category: shipping-and-freight
-    targetDate: '2026-07-01'
+    targetDate: '2026-10-31'
     status: pending
-    notes: Professional packers arrive. Inventory all items. Confirm shipping paperwork and customs forms.
+    notes: Professional packers arrive. Inventory all items. Confirm shipping paperwork.
   - id: travel-flight-day
     title: Travel / Flight Day
     category: general
-    targetDate: '2026-07-15'
+    targetDate: '2026-11-18'
     status: pending
-    notes: Final departure from Dubai. Fly to London Heathrow.
+    notes: Final departure from Dubai.
   - id: arrival-initial-setup
     title: Arrival & Initial Setup
     category: general
-    targetDate: '2026-07-16'
+    targetDate: '2026-11-18'
     status: pending
-    notes: Arrive in London. Check into temporary accommodation. Collect Snoopy from animal reception centre.
+    notes: Arrive in Perth. Check into temporary accommodation.
   - id: post-arrival-admin
     title: Post-Arrival Admin
     category: general
-    targetDate: '2026-08-01'
+    targetDate: '2026-11-19'
     status: pending
-    notes: Register with GP, open UK bank account, get NI number, register council tax, set up utilities.
+    notes: Register with local authorities, set up bank account, get health insurance sorted.
+  - id: tenancy-ends
+    title: Tenancy Ends and Renovation Starts
+    category: accommodation-and-housing
+    targetDate: '2026-11-25'
+    status: pending
+    notes: Tenants move out and renovations begin.
+  - id: move-into-house
+    title: Move Into House
+    category: accommodation-and-housing
+    targetDate: '2026-11-28'
+    status: pending
+    notes: First day in Hamilton St after rennovations complete.

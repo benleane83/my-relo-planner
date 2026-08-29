@@ -4,25 +4,21 @@
     "country": "UAE"
   },
   "destination": {
-    "city": "London",
-    "country": "United Kingdom"
+    "city": "Perth",
+    "country": "Australia"
   },
-  "moveDate": "2026-07-15",
+  "moveDate": "2026-11-14",
   "familyMembers": [
     {
-      "name": "Mark",
-      "notes": "Transferring with current employer to London office"
+      "name": "Ben",
+      "notes": ""
     },
     {
-      "name": "Lisa",
-      "notes": "Job searching in London, Skilled Worker visa dependent"
-    },
-    {
-      "name": "Snoopy",
-      "notes": "Dog — needs UK pet import paperwork (PETS scheme)"
+      "name": "Shabnam",
+      "notes": ""
     }
   ],
-  "originCurrency": "AED",
-  "destinationCurrency": "GBP",
-  "conversionRate": 0.22
+  "originCurrency": "AUD",
+  "destinationCurrency": "AUD",
+  "conversionRate": 1
 }

@@ -1,163 +1,149 @@
 budget:
-  total: 12000
+  total: 30000
   categories:
-    furniture: 4000
-    electronics: 2500
-    household: 2000
-    clothing: 1500
-    other: 2000
-
+    furniture: 17500
+    electronics: 7500
+    household: 2500
+    clothing: 500
+    other: 3000
 items:
   - id: shop-001
-    item: Sofa (3-seater)
+    item: Sofas (3-seater and 2-seater set)
     category: furniture
     quantity: 1
-    estimatedCost: 1200
+    estimatedCost: 5000
     actualCost: 0
-    currency: GBP
+    currency: AUD
     status: researching
-    store: IKEA / Made.com
-    notes: Need to check dimensions for London flat. Prefer something deliverable within 2 weeks of arrival.
-
-  - id: shop-002
-    item: UK Power Adapters (multi-pack)
-    category: electronics
-    quantity: 10
-    estimatedCost: 30
-    actualCost: 25
-    currency: GBP
-    status: purchased
-    store: Amazon UK
-    notes: Bought 10-pack of UAE-to-UK adapters. Will also need a few UK extension leads on arrival.
-
+    store: Nick Scali
+    notes: Order 12 weeks before move-in date
   - id: shop-003
-    item: Mattress (UK King)
+    item: King Bed (Shabnam)
     category: furniture
+    quantity: 1
+    estimatedCost: 4500
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: Order 4 weeks before move-in date
+  - item: Fridge/Freezer
+    category: household
+    quantity: 1
+    estimatedCost: 1400
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: Appliances Online
+    notes: Fisher Paykel, Westinghouse or Electrolux are top brands. LG and Samsung are Tier 2
+    id: shop-1785482257479
+  - item: Washing Machine
+    category: household
+    quantity: 1
+    estimatedCost: 1400
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: Appliances Online
+    notes: Bosch Serie 8 9kg is 1373 on sale, or LG Series 3 AI 9KG is 990
+    id: shop-1785482385540
+  - item: Queen Bed (Ben)
+    category: furniture
+    quantity: 1
+    estimatedCost: 3200
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: ''
+    id: shop-1785482521734
+  - item: Dining Table
+    category: furniture
+    quantity: 1
+    estimatedCost: 1000
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: ''
+    id: shop-1785482596090
+  - item: TV
+    category: electronics
+    quantity: 1
+    estimatedCost: 2400
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: Appliances Online
+    notes: 55" OLED - LG C6, Samsung S90F, Sony A95L
+    id: shop-1785482617444
+  - item: Microwave
+    category: electronics
+    quantity: 1
+    estimatedCost: 400
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: Appliances Online
+    notes: Panasonic NN-ST69QS
+    id: shop-1785482714440
+  - item: Outdoor Sofa Set
+    category: furniture
+    quantity: 1
+    estimatedCost: 2000
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: Consider aluminium-timber hybrid sets for better maintenance?
+    id: shop-1785482727343
+  - item: Coffee Table
+    category: furniture
+    quantity: 1
+    estimatedCost: 500
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: ''
+    id: shop-1785482770187
+  - item: Side Cabinet
+    category: furniture
+    quantity: 1
+    estimatedCost: 1000
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: ''
+    id: shop-1785482802607
+  - item: Bedside Tables
+    category: furniture
+    quantity: 2
+    estimatedCost: 200
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: ''
+    id: shop-1785482822722
+  - item: Coffee Machine
+    category: electronics
+    quantity: 1
+    estimatedCost: 1000
+    actualCost: 0
+    currency: AUD
+    status: needed
+    store: ''
+    notes: Breville Barista Pro
+    id: shop-1786113887413
+  - item: Robovacuum
+    category: electronics
     quantity: 1
     estimatedCost: 800
     actualCost: 0
-    currency: GBP
+    currency: AUD
     status: needed
     store: ''
-    notes: UK king (150x200cm) is different to UAE sizes. Research Emma, Simba, or Hypnos brands.
-
-  - id: shop-004
-    item: Winter Coats
-    category: clothing
-    quantity: 2
-    estimatedCost: 400
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: ''
-    notes: London winters are wet and cold. Need proper waterproof coats — buy before October.
-
-  - id: shop-005
-    item: Voltage Converter (heavy duty)
-    category: electronics
-    quantity: 1
-    estimatedCost: 80
-    actualCost: 0
-    currency: GBP
-    status: researching
-    store: Amazon UK
-    notes: For kitchen appliances that run on 220V/UAE plug. Check if Breville coffee machine needs converter or just adapter.
-
-  - id: shop-006
-    item: Bedding Set (UK King)
-    category: household
-    quantity: 2
-    estimatedCost: 150
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: John Lewis
-    notes: UK king bedding. Buy duvet, pillows, and sheets after mattress decision.
-
-  - id: shop-007
-    item: Kitchen Essentials Starter Kit
-    category: household
-    quantity: 1
-    estimatedCost: 200
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: ''
-    notes: Pots, pans, utensils, plates for first week. Ship rest or buy once settled.
-
-  - id: shop-008
-    item: Standing Desk
-    category: furniture
-    quantity: 1
-    estimatedCost: 500
-    actualCost: 0
-    currency: GBP
-    status: researching
-    store: Fully / IKEA
-    notes: Need a good WFH setup immediately. Check if current desk is worth shipping vs buying new.
-
-  - id: shop-009
-    item: Umbrella & Rainwear
-    category: clothing
-    quantity: 3
-    estimatedCost: 80
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: ''
-    notes: Compact umbrellas, waterproof shoes. Essential for London living.
-
-  - id: shop-010
-    item: IATA Dog Travel Crate
-    category: other
-    quantity: 1
-    estimatedCost: 350
-    actualCost: 320
-    currency: AED
-    status: purchased
-    store: Pet Zone Dubai
-    notes: IATA-approved crate for Snoopy. Size large. Purchased and training Snoopy to use it.
-
-  - id: shop-011
-    item: Portable Heater
-    category: electronics
-    quantity: 2
-    estimatedCost: 120
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: Argos / Currys
-    notes: Rental may not have great heating. Good to have backup for first winter.
-
-  - id: shop-012
-    item: Bed Frame (UK King)
-    category: furniture
-    quantity: 1
-    estimatedCost: 600
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: IKEA / Habitat
-    notes: Simple frame with storage if possible. Coordinate delivery with mattress.
-
-  - id: shop-013
-    item: Layering Clothes (Thermals)
-    category: clothing
-    quantity: 4
-    estimatedCost: 120
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: Uniqlo
-    notes: HeatTech thermals — essential base layers for adjusting from Dubai heat to UK cold.
-
-  - id: shop-014
-    item: Smart TV
-    category: electronics
-    quantity: 1
-    estimatedCost: 500
-    actualCost: 0
-    currency: GBP
-    status: needed
-    store: Currys / John Lewis
-    notes: 50-55 inch. Not worth shipping due to voltage and smart TV region settings. Buy new in UK.
+    notes: Dreame L40 Ultra
+    id: shop-1786113944865
