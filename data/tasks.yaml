@@ -21,7 +21,7 @@ tasks:
     milestone: accommodation-secured
     status: todo
     priority: medium
-    dueDate: '2026-09-18'
+    dueDate: '2026-09-19'
     notes: Need Shabnam's accommodation for while renovation is happening.
   - title: Start AUD transfers
     category: general
@@ -58,3 +58,10 @@ tasks:
     dueDate: '2026-11-16'
     notes: AAMI, Allianz, or Budget Direct
     id: task-1786543103866
+  - title: Order Nick Scali Sofas
+    category: ''
+    status: todo
+    priority: medium
+    dueDate: '2026-08-31'
+    notes: ''
+    id: task-1787994570412

@@ -3,12 +3,12 @@ milestones:
     title: Planning & Decision
     category: general
     targetDate: '2026-08-31'
-    status: in-progress
+    status: completed
     notes: Finalize relocation decision, set budget, and establish timeline for the move!
   - id: housing-research
     title: Book Temp Accommodation
     category: accommodation-and-housing
-    targetDate: '2026-09-18'
+    targetDate: '2026-09-19'
     status: pending
     notes: Confirm temp housing for Perth after arrival
   - id: pet-preparation
@@ -44,7 +44,7 @@ milestones:
   - id: flights-booked
     title: Flights Booked
     category: general
-    targetDate: '2026-09-18'
+    targetDate: '2026-09-19'
     status: pending
     notes: Book flights from Dubai to Perth
   - id: packing-shipping-day
@@ -56,7 +56,7 @@ milestones:
   - id: travel-flight-day
     title: Travel / Flight Day
     category: general
-    targetDate: '2026-11-18'
+    targetDate: '2026-11-19'
     status: pending
     notes: Final departure from Dubai.
   - id: arrival-initial-setup
@@ -68,7 +68,7 @@ milestones:
   - id: post-arrival-admin
     title: Post-Arrival Admin
     category: general
-    targetDate: '2026-11-19'
+    targetDate: '2026-11-20'
     status: pending
     notes: Register with local authorities, set up bank account, get health insurance sorted.
   - id: tenancy-ends
