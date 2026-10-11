@@ -1,7 +1,7 @@
 ---
 title: Work and Visas
-status: not-started
-lastUpdated: '2026-04-03'
+status: in-progress
+lastUpdated: '2026-09-26'
 tags:
   - visa
   - work-permit

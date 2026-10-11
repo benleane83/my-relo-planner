@@ -1,7 +1,7 @@
 ---
 title: Accommodation and Housing
-status: not-started
-lastUpdated: '2026-07-30'
+status: done
+lastUpdated: '2026-09-26'
 tags:
   - housing
   - rental

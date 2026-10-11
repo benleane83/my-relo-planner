@@ -8,9 +8,9 @@ milestones:
   - id: housing-research
     title: Book Temp Accommodation
     category: accommodation-and-housing
-    targetDate: '2026-09-19'
-    status: pending
-    notes: Confirm temp housing for Perth after arrival
+    targetDate: '2026-09-12'
+    status: completed
+    notes: Quest Innaloo 1-bed apartment for 22-29 Nov
   - id: pet-preparation
     title: Misha Ready To Travel
     category: pet
@@ -27,7 +27,7 @@ milestones:
     title: Last Day Of Work
     category: general
     targetDate: '2026-09-04'
-    status: pending
+    status: completed
     notes: Last day with Microsoft, so visa cancellation happens automatically.
   - id: shipping-booked
     title: Shipping / Freight Booked
@@ -38,14 +38,14 @@ milestones:
   - id: vehicle-arrangements
     title: Vehicle Arrangements
     category: cars
-    targetDate: '2026-10-17'
-    status: pending
+    targetDate: '2026-10-24'
+    status: in-progress
     notes: Book vehicle for Perth arrival
   - id: flights-booked
     title: Flights Booked
     category: general
-    targetDate: '2026-09-19'
-    status: pending
+    targetDate: '2026-09-20'
+    status: completed
     notes: Book flights from Dubai to Perth
   - id: packing-shipping-day
     title: Packing & Shipping Day
@@ -56,19 +56,19 @@ milestones:
   - id: travel-flight-day
     title: Travel / Flight Day
     category: general
-    targetDate: '2026-11-19'
+    targetDate: '2026-11-22'
     status: pending
-    notes: Final departure from Dubai.
+    notes: Final departure from Dubai - 2:40am flight to Perth.
   - id: arrival-initial-setup
     title: Arrival & Initial Setup
     category: general
-    targetDate: '2026-11-18'
+    targetDate: '2026-11-22'
     status: pending
     notes: Arrive in Perth. Check into temporary accommodation.
   - id: post-arrival-admin
     title: Post-Arrival Admin
     category: general
-    targetDate: '2026-11-20'
+    targetDate: '2026-11-23'
     status: pending
     notes: Register with local authorities, set up bank account, get health insurance sorted.
   - id: tenancy-ends
@@ -80,6 +80,6 @@ milestones:
   - id: move-into-house
     title: Move Into House
     category: accommodation-and-housing
-    targetDate: '2026-11-28'
+    targetDate: '2026-11-29'
     status: pending
     notes: First day in Hamilton St after rennovations complete.

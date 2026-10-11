@@ -14,7 +14,7 @@ items:
     estimatedCost: 5000
     actualCost: 0
     currency: AUD
-    status: researching
+    status: needed
     store: Nick Scali
     notes: Order 12 weeks before move-in date
   - id: shop-003
@@ -33,20 +33,22 @@ items:
     estimatedCost: 1400
     actualCost: 0
     currency: AUD
-    status: needed
-    store: Appliances Online
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
     notes: Fisher Paykel, Westinghouse or Electrolux are top brands. LG and Samsung are Tier 2
     id: shop-1785482257479
+    productModel: Fisher Paykel Bottom-Mount 494L Series 5
   - item: Washing Machine
     category: household
     quantity: 1
     estimatedCost: 1400
     actualCost: 0
     currency: AUD
-    status: needed
-    store: Appliances Online
-    notes: Bosch Serie 8 9kg is 1373 on sale, or LG Series 3 AI 9KG is 990
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
+    notes: On sale currently for 1373
     id: shop-1785482385540
+    productModel: Bosch Serie 8 9kg
   - item: Queen Bed (Ben)
     category: furniture
     quantity: 1
@@ -73,20 +75,22 @@ items:
     estimatedCost: 2400
     actualCost: 0
     currency: AUD
-    status: needed
-    store: Appliances Online
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
     notes: 55" OLED - LG C6, Samsung S90F, Sony A95L
     id: shop-1785482617444
+    productModel: Samsung S90F
   - item: Microwave
     category: electronics
     quantity: 1
     estimatedCost: 400
     actualCost: 0
     currency: AUD
-    status: needed
-    store: Appliances Online
-    notes: Panasonic NN-ST69QS
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
+    notes: ''
     id: shop-1785482714440
+    productModel: Panasonic NN-ST69QS
   - item: Outdoor Sofa Set
     category: furniture
     quantity: 1
@@ -133,17 +137,30 @@ items:
     estimatedCost: 1000
     actualCost: 0
     currency: AUD
-    status: needed
-    store: ''
-    notes: Breville Barista Pro
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
+    notes: ''
     id: shop-1786113887413
+    productModel: Breville Barista Pro
   - item: Robovacuum
     category: electronics
     quantity: 1
     estimatedCost: 800
     actualCost: 0
     currency: AUD
-    status: needed
-    store: ''
-    notes: Dreame L40 Ultra
+    status: researching
+    store: Appliances Online, JB Hifi, Harvey Norman
+    notes: ''
     id: shop-1786113944865
+    productModel: Dreame L40 Ultra
+  - item: Computer Monitor
+    category: electronics
+    quantity: 1
+    estimatedCost: 499
+    actualCost: 0
+    currency: AUD
+    status: researching
+    store: JB Hifi, Harvey Norman
+    productModel: Espresso Display 15
+    notes: ''
+    id: shop-1788607691411

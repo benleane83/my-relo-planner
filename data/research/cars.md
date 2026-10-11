@@ -1,7 +1,7 @@
 ---
 title: Cars
-status: not-started
-lastUpdated: '2026-08-04'
+status: in-progress
+lastUpdated: '2026-09-26'
 tags:
   - car
   - driving

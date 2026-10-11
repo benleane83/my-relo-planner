@@ -15,53 +15,122 @@ tasks:
     priority: high
     dueDate: '2026-03-11'
     notes: Test result dated 11th March, so 180-day period will start and finish early Sept.
-  - id: task-009
-    title: Book temporary accommodation for first month
-    category: accommodation-and-housing
-    milestone: accommodation-secured
-    status: todo
-    priority: medium
-    dueDate: '2026-09-19'
-    notes: Need Shabnam's accommodation for while renovation is happening.
   - title: Start AUD transfers
     category: general
-    status: in-progress
+    status: done
     priority: medium
     dueDate: '2026-08-29'
     notes: Consider Macquarie or UBank savings account for any extra money above offset
     id: task-1785483209975
   - title: Confirm NBN plan
     category: general
-    status: todo
+    status: done
     priority: medium
-    dueDate: '2026-11-06'
+    dueDate: '2026-10-04'
     notes: ''
     id: task-1785485960775
   - title: Sign-up for Aus credit card
     category: general
-    status: todo
+    status: done
     priority: medium
-    dueDate: '2026-09-30'
+    dueDate: '2026-10-05'
     notes: Amex Platinum first and then ANZ Rewards Black, plus Amex Explorer for Shabnam with sign-up bonus
     id: task-1785493333743
   - title: Order NBN
     category: accommodation-and-housing
     status: todo
     priority: low
-    dueDate: '2026-11-16'
+    dueDate: '2026-11-07'
     notes: Superloop 500/50 plan on sale for $65/mth for new customers
     id: task-1786542977598
   - title: Update Home Insurance
     category: accommodation-and-housing
     status: todo
     priority: medium
-    dueDate: '2026-11-16'
-    notes: AAMI, Allianz, or Budget Direct
+    dueDate: '2026-10-17'
+    notes: AAMI Insurance - $1213 quote. Start policy from 23rd Nov
     id: task-1786543103866
   - title: Order Nick Scali Sofas
     category: ''
-    status: todo
+    status: done
     priority: medium
-    dueDate: '2026-08-31'
+    dueDate: '2026-09-07'
     notes: ''
     id: task-1787994570412
+  - title: Log DEWA Move-Out
+    category: ''
+    status: done
+    priority: medium
+    dueDate: '2026-09-23'
+    notes: DEWA must be done first (https://www.dewa.gov.ae/en/consumer/supply-management/moveout-anonymous), ahead of date.
+    id: task-1788454822141
+  - title: Book UAE Health Insurance
+    category: ''
+    status: done
+    priority: medium
+    dueDate: '2026-09-25'
+    notes: Genki Traveller - must be started after UAE visa ends
+    id: task-1788607039919
+  - title: Misha's Flight
+    category: pet
+    status: todo
+    priority: medium
+    dueDate: '2026-11-20'
+    notes: 4:30am pickup for 10:05am departure to MEL, arrives 6:25am next day
+    id: task-1789033380096
+  - title: Ben's First Day of Work
+    category: general
+    status: done
+    priority: medium
+    dueDate: '2026-09-14'
+    notes: ''
+    id: task-1789034011813
+  - title: Misha Blood Test
+    category: pet
+    status: todo
+    priority: high
+    dueDate: '2026-10-19'
+    notes: ''
+    id: task-1789822422127
+  - title: Misha Ministry Appointment
+    category: pet
+    status: todo
+    priority: high
+    dueDate: '2026-11-19'
+    notes: ''
+    id: task-1789822451332
+  - title: Book Novated Lease
+    category: general
+    status: done
+    priority: medium
+    dueDate: '2026-11-15'
+    notes: ''
+    id: task-1789822595049
+  - title: Change Dubai Car
+    category: general
+    status: todo
+    priority: medium
+    dueDate: '2026-10-20'
+    notes: ''
+    id: task-1789822688963
+  - title: Log Empower Move-Out
+    category: ''
+    status: todo
+    priority: medium
+    dueDate: '2026-11-21'
+    notes: Needs photo of meter reading and then submit in the Empower app
+    id: task-1790231904076
+  - title: Advertise Sale Items
+    category: ''
+    status: todo
+    priority: medium
+    dueDate: '2026-10-24'
+    notes: Water Purifier, Air Fryer, Office Chairs
+    id: task-1790425824846
+  - title: Cancel UAE Health Insurance
+    category: ''
+    status: todo
+    priority: medium
+    dueDate: '2026-11-24'
+    notes: ''
+    id: task-1790427590185
